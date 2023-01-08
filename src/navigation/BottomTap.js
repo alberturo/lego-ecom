@@ -4,10 +4,13 @@ import { FontAwesome } from "@expo/vector-icons";
 import { Colors } from "../constants/colors";
 import Home from "../screens/Home";
 import Products from "../screens/Products";
+import { useSelector } from "react-redux";
+import { selectCartItems } from "../features/addToCart/addToCart";
 
 const Tab = createBottomTabNavigator();
 
 export default function BottomTab() {
+  const items = useSelector(selectCartItems);
   return (
     <Tab.Navigator
       initialRouteName="Home"

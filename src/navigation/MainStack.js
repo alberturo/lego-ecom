@@ -1,4 +1,5 @@
 import { createStackNavigator } from "@react-navigation/stack";
+import Basket from "../screens/Basket";
 import Products from "../screens/Products";
 import BottomTab from "./BottomTap";
 
@@ -20,6 +21,11 @@ export default function MainStack() {
         }}
       />
       <HomeStack.Screen name="Products" component={Products} />
+      <HomeStack.Screen
+        name="Basket"
+        component={Basket}
+        options={{ presentation: "modal", headerShown: false }}
+      />
     </HomeStack.Navigator>
   );
 }

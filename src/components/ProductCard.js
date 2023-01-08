@@ -55,9 +55,6 @@ export default function ProductCard({ id, image, name, unit_price }) {
             </View>
             <Text style={producCardStyles.price}>${unit_price * count}</Text>
           </View>
-          <TouchableOpacity style={producCardStyles.addToCard}>
-            <Text style={producCardStyles.addToCardText}>Add To Cart</Text>
-          </TouchableOpacity>
         </View>
       </View>
     </View>
@@ -123,19 +120,5 @@ export const producCardStyles = StyleSheet.create({
     fontSize: "18px",
     fontWeight: "800",
     marginHorizontal: "5%",
-  },
-  addToCard: {
-    width: "80%",
-    height: "20%",
-    justifyContent: "center",
-    alignItems: "center",
-    borderRadius: "20%",
-    backgroundColor: "#000",
-    marginTop: "10%",
-  },
-  addToCardText: {
-    color: "#ffffff",
-    fontSize: "14px",
-    fontWeight: "bold",
   },
 });

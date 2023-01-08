@@ -11,6 +11,8 @@ const BasketIcon = () => {
   const items = useSelector(selectCartItems);
   const navigation = useNavigation();
   const basketTotal = useSelector(selectCartTotal);
+
+  if (items.length === 0) return null;
   console.log(basketTotal);
   return (
     <View
@@ -31,10 +33,13 @@ const BasketIcon = () => {
           marginLeft: "5%",
           justifyContent: "space-around",
         }}
+        onPress={() => {
+          navigation.navigate("Basket");
+        }}
       >
         <Text style={{ fontWeight: "bold" }}>{items.length} products</Text>
-        <Text style={{ fontWeight: "bold" }}>Add to card</Text>
-        <Text style={{ fontWeight: "bold" }}>{basketTotal}</Text>
+        <Text style={{ fontWeight: "bold" }}>View Basket</Text>
+        <Text style={{ fontWeight: "bold" }}>${basketTotal}</Text>
       </TouchableOpacity>
     </View>
   );
